@@ -15,6 +15,7 @@
 		9EB6163924909DE6002C2299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB6163724909DE6002C2299 /* LaunchScreen.storyboard */; };
 		9EB6164424909DE6002C2299 /* RPN_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6164324909DE6002C2299 /* RPN_CalculatorTests.swift */; };
 		9EB6164F24909DE6002C2299 /* RPN_CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6164E24909DE6002C2299 /* RPN_CalculatorUITests.swift */; };
+		9EB6165D24909E89002C2299 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6165C24909E89002C2299 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		9EB6164A24909DE6002C2299 /* RPN-CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RPN-CalculatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB6164E24909DE6002C2299 /* RPN_CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPN_CalculatorUITests.swift; sourceTree = "<group>"; };
 		9EB6165024909DE6002C2299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EB6165C24909E89002C2299 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				9EB6163024909DE3002C2299 /* ViewController.swift */,
 				9EB6163224909DE3002C2299 /* Main.storyboard */,
 				9EB6163524909DE6002C2299 /* Assets.xcassets */,
+				9EB6165C24909E89002C2299 /* Calculator.swift */,
 				9EB6163724909DE6002C2299 /* LaunchScreen.storyboard */,
 				9EB6163A24909DE6002C2299 /* Info.plist */,
 			);
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EB6163124909DE3002C2299 /* ViewController.swift in Sources */,
+				9EB6165D24909E89002C2299 /* Calculator.swift in Sources */,
 				9EB6162D24909DE3002C2299 /* AppDelegate.swift in Sources */,
 				9EB6162F24909DE3002C2299 /* SceneDelegate.swift in Sources */,
 			);
