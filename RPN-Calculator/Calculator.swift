@@ -21,39 +21,44 @@ class Calculator{
         let length = stack.count
         for i in 0...(length-1) {
             all += stack[i]
+        all += " "
         }
         return all
     }
     
-    func add() -> Int{
-        let length = stack.count
-        let num1 = Int(stack[length]) ?? 0
-        let num2 = Int(stack[length-1]) ?? 0
-        let sum = num1 + num2
-        return sum
+    func add(position: Int) -> [String]{
+        var temp1 = [String]()
+        let num1 = Int(stack[position-1]) ?? 0
+        let num2 = Int(stack[position-2]) ?? 0
+        let result = num1 + num2
+        temp1.append(String(result))
+        return temp1
     }
     
-    func subtract() -> Int{
-        let length = stack.count
-        let num1 = Int(stack[length]) ?? 0
-        let num2 = Int(stack[length-1]) ?? 0
+    func subtract(position: Int) -> [String]{
+        var temp1 = [String]()
+        let num1 = Int(stack[position-1]) ?? 0
+        let num2 = Int(stack[position-2]) ?? 0
         let result = num2 - num1
-        return result
+        temp1.append(String(result))
+        return temp1
     }
     
-    func product() -> Int{
-        let length = stack.count
-        let num1 = Int(stack[length]) ?? 0
-        let num2 = Int(stack[length-1]) ?? 0
+    func product(position: Int) -> [String]{
+        var temp1 = [String]()
+        let num1 = Int(stack[position-1]) ?? 0
+        let num2 = Int(stack[position-2]) ?? 0
         let result = num2 * num1
-        return result
+        temp1.append(String(result))
+        return temp1
     }
     
-    func divide() -> Int{
-        let length = stack.count
-        let num1 = Int(stack[length]) ?? 0
-        let num2 = Int(stack[length-1]) ?? 0
+    func divide(position: Int) -> [String]{
+        var temp1 = [String]()
+        let num1 = Int(stack[position-1]) ?? 0
+        let num2 = Int(stack[position-2]) ?? 0
         let result = num2 / num1
-        return result
+        temp1.append(String(result))
+        return temp1
     }
 }
