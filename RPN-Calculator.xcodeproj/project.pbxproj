@@ -104,9 +104,9 @@
 				9EB6162C24909DE3002C2299 /* AppDelegate.swift */,
 				9EB6162E24909DE3002C2299 /* SceneDelegate.swift */,
 				9EB6163024909DE3002C2299 /* ViewController.swift */,
+				9EB6165C24909E89002C2299 /* Calculator.swift */,
 				9EB6163224909DE3002C2299 /* Main.storyboard */,
 				9EB6163524909DE6002C2299 /* Assets.xcassets */,
-				9EB6165C24909E89002C2299 /* Calculator.swift */,
 				9EB6163724909DE6002C2299 /* LaunchScreen.storyboard */,
 				9EB6163A24909DE6002C2299 /* Info.plist */,
 			);
