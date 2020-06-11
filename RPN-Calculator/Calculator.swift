@@ -31,21 +31,25 @@ class Calculator{
         var resultStack = [Int]()
         for i in 0...(stack.count-1) {
             if stack[i] == "+" {
-                let no1 = Int(resultStack.removeLast())
-                let no2 = Int(resultStack.removeLast())
-                resultStack.append(no1 + no2)
+                let number1 = Int(resultStack.remove(at: resultStack.count-1))
+                let number2 = Int(resultStack.remove(at: resultStack.count-1))
+                let result = number1 + number2
+                resultStack.append(result)
             } else if stack[i] == "-" {
-                let no1 = Int(resultStack.removeLast())
-                let no2 = Int(resultStack.removeLast())
-                resultStack.append(no2 - no1)
+                let number1 = Int(resultStack.remove(at: resultStack.count-1))
+                let number2 = Int(resultStack.remove(at: resultStack.count-1))
+                let result = number2 - number1
+                resultStack.append(result)
             } else if stack[i] == "*" {
-                let no1 = Int(resultStack.removeLast())
-                let no2 = Int(resultStack.removeLast())
-                resultStack.append(no1 * no2)
+                let number1 = Int(resultStack.remove(at: resultStack.count-1))
+                let number2 = Int(resultStack.remove(at: resultStack.count-1))
+                let result = number1 * number2
+                resultStack.append(result)
             } else if stack[i] == "/" {
-                let no1 = Int(resultStack.removeLast())
-                let no2 = Int(resultStack.removeLast())
-                resultStack.append(no2 / no1)
+                let number1 = Int(resultStack.remove(at: resultStack.count-1))
+                let number2 = Int(resultStack.remove(at: resultStack.count-1))
+                let result = number2 / number1
+                resultStack.append(result)
             } else {
                 resultStack.append(Int(stack[i]) ?? 0)
             }
