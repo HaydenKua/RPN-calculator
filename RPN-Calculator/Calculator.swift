@@ -16,6 +16,15 @@ class Calculator{
         self.stack = stack
     }
     
+    func displayAll() -> String{
+        var all = ""
+        let length = stack.count
+        for i in 0...(length-1) {
+            all += stack[i]
+        }
+        return all
+    }
+    
     func add() -> Int{
         let length = stack.count
         let num1 = Int(stack[length]) ?? 0
