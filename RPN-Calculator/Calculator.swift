@@ -27,7 +27,6 @@ class Calculator{
     }
     
     func calculateAll() -> String{
-        print(stack)
         var resultStack = [Int]()
         for i in 0...(stack.count-1) {
             if stack[i] == "+" {
