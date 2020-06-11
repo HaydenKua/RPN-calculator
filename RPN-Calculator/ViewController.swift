@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController {
     
     var stack = [String]()
-    var temp = [String]()
     var number = ""
     var numberLength = 0
     
@@ -169,30 +168,8 @@ class ViewController: UIViewController {
     
     @IBAction func evalButtonToggle(_ sender: Any) {
         let calculate = Calculator(stack: stack)
-        let stackLength = stack.count
-        for i in 0..<stackLength {
-            temp.append(stack[i])
-            if stack[i] == "+" {
-                temp = calculate.add(position: i)
-            } else if stack[i] == "-" {
-                temp = calculate.subtract(position: i)
-            } else if stack[i] == "*" {
-                temp = calculate.product(position: i)
-            } else if stack[i] == "/" {
-                temp = calculate.divide(position: i)
-            }
-        }
-        display.text = displayTemp()
-    }
-    
-    func displayTemp() -> String{
-        var all = ""
-        let length = temp.count
-        for i in 0...(length-1) {
-            all += temp[i]
-        all += " "
-        }
-        return all
+        let finalAnswer = calculate.calculateAll()
+        display.text = finalAnswer
     }
     
     @IBAction func clearButtonToggle(_ sender: Any) {
@@ -207,8 +184,12 @@ class ViewController: UIViewController {
         if Int(number) ?? 0 > 0 {
             number = "-" + number
             display.text = number
+        } else {
+            if number != "" {
+                number.remove(at:number.startIndex)
+                display.text = number
+            }
         }
-        
     }
     
     @IBAction func additionButtonToggle(_ sender: Any) {
@@ -236,9 +217,11 @@ class ViewController: UIViewController {
     }
     
     func enter() {
-        stack.append(number)
-        numberLength = 0
-        number = ""
+        if number != ""{
+            stack.append(number)
+            numberLength = 0
+            number = ""
+        }
     }
     
     
@@ -246,7 +229,6 @@ class ViewController: UIViewController {
         let calculate = Calculator(stack: stack)
         display.text = calculate.displayAll()
     }
-    
 }
 
 

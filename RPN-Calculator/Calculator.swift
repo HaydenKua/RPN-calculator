@@ -26,39 +26,31 @@ class Calculator{
         return all
     }
     
-    func add(position: Int) -> [String]{
-        var temp1 = [String]()
-        let num1 = Int(stack[position-1]) ?? 0
-        let num2 = Int(stack[position-2]) ?? 0
-        let result = num1 + num2
-        temp1.append(String(result))
-        return temp1
-    }
-    
-    func subtract(position: Int) -> [String]{
-        var temp1 = [String]()
-        let num1 = Int(stack[position-1]) ?? 0
-        let num2 = Int(stack[position-2]) ?? 0
-        let result = num2 - num1
-        temp1.append(String(result))
-        return temp1
-    }
-    
-    func product(position: Int) -> [String]{
-        var temp1 = [String]()
-        let num1 = Int(stack[position-1]) ?? 0
-        let num2 = Int(stack[position-2]) ?? 0
-        let result = num2 * num1
-        temp1.append(String(result))
-        return temp1
-    }
-    
-    func divide(position: Int) -> [String]{
-        var temp1 = [String]()
-        let num1 = Int(stack[position-1]) ?? 0
-        let num2 = Int(stack[position-2]) ?? 0
-        let result = num2 / num1
-        temp1.append(String(result))
-        return temp1
+    func calculateAll() -> String{
+        print(stack)
+        var resultStack = [Int]()
+        for i in 0...(stack.count-1) {
+            if stack[i] == "+" {
+                let no1 = Int(resultStack.removeLast())
+                let no2 = Int(resultStack.removeLast())
+                resultStack.append(no1 + no2)
+            } else if stack[i] == "-" {
+                let no1 = Int(resultStack.removeLast())
+                let no2 = Int(resultStack.removeLast())
+                resultStack.append(no2 - no1)
+            } else if stack[i] == "*" {
+                let no1 = Int(resultStack.removeLast())
+                let no2 = Int(resultStack.removeLast())
+                resultStack.append(no1 * no2)
+            } else if stack[i] == "/" {
+                let no1 = Int(resultStack.removeLast())
+                let no2 = Int(resultStack.removeLast())
+                resultStack.append(no2 / no1)
+            } else {
+                resultStack.append(Int(stack[i]) ?? 0)
+            }
+        }
+        let finalAnswer = resultStack[0]
+        return String(finalAnswer)
     }
 }
