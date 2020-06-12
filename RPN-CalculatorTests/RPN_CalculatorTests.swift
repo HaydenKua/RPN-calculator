@@ -52,7 +52,7 @@ class RPN_CalculatorTests: XCTestCase {
     }
     
     func testIfInvalidExpressionIsEnteredReturnErrorMessage() {
-        let testCases = [(input: ["-","+","5"], expected: "Invalid Expression!"), (input: ["+"], expected: "Invalid Expression!"), (input: ["5","+","-"], expected: "Invalid Expression!"), (input: ["5"], expected: "Invalid Expression!")]
+        let testCases = [(input: ["-","+","5"], expected: "Invalid Expression! You must at least have two numbers followed by an operator."), (input: ["+"], expected: "Invalid Expression! You must at least have two numbers followed by an operator."), (input: ["5","+","-"], expected: "Invalid Expression! You must at least have two numbers followed by an operator."), (input: ["5"], expected: "Invalid Expression! You must at least have two numbers followed by an operator.")]
 
         for testCase in testCases {
             let calculator = Calculator(stack: testCase.input)

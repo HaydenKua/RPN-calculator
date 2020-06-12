@@ -29,7 +29,7 @@ class Calculator{
     func calculateAll() -> String{
         var resultStack = [Int]()
         if stack.count < 3 {
-            return "Invalid Expression!"
+            return "Invalid Expression! You must at least have two numbers followed by an operator."
         }
         for j in 0...1 {
             if stack[j] == "+" || stack[j] == "-" || stack[j] == "*" || stack[j] == "/" || stack[j] == nil{

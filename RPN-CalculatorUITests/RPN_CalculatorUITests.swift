@@ -41,6 +41,7 @@ class RPN_CalculatorUITests: XCTestCase {
         }
     }
     
+    
     func testWhenButtonIsClickedTheNumberIsDisplayed() {
         let app = XCUIApplication()
         app.launch()
@@ -54,4 +55,35 @@ class RPN_CalculatorUITests: XCTestCase {
         XCTAssertEqual(actual, expected)
     }
     
+    func testWhenEvalIsClickedExpressionIsCalculated() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["3"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["5"].tap()
+        app.buttons["x"].tap()
+        app.buttons["4"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["4"].tap()
+        app.buttons["x"].tap()
+        app.buttons["-"].tap()
+        app.buttons["Eval"].tap()
+        
+        let expected = "-1"
+        let actual = app.staticTexts["display"].label
+        XCTAssertEqual(actual, expected)
+    }
+    
+    func testWhenClearIsClickedNumberIsWiped() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["1"].tap()
+        app.buttons["CLR"].tap()
+        
+        let expected = " "
+        let actual = app.staticTexts["display"].label
+        XCTAssertEqual(actual, expected)
+    }
 }

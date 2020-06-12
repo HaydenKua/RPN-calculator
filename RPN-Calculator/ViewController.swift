@@ -50,6 +50,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         display.layer.borderWidth = 1.5
+        display.adjustsFontSizeToFitWidth = true
+        display.minimumScaleFactor = 0.4
         // Do any additional setup after loading the view.
     }
     
@@ -90,84 +92,48 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonOneOn(_ sender: Any) {
-        number += "1"
-        numberLength += 1
-        display.text = number
-        if numberLength > 2{
-            disableNumberButtons()
-        }
+        addNumber(n : "1")
     }
     
     @IBAction func buttonTwoOn(_ sender: Any) {
-        number += "2"
-        numberLength += 1
-        display.text = number
-        if numberLength > 2{
-            disableNumberButtons()
-        }
+        addNumber(n : "2")
     }
     
     @IBAction func buttonThreeOn(_ sender: Any) {
-        number += "3"
-        numberLength += 1
-        display.text = number
-        if numberLength > 2{
-            disableNumberButtons()
-        }
+        addNumber(n : "3")
     }
     
     @IBAction func buttonFourOn(_ sender: Any) {
-        number += "4"
-        numberLength += 1
-        display.text = number
-        if numberLength > 2{
-            disableNumberButtons()
-        }
+        addNumber(n : "4")
     }
     
     @IBAction func buttonFiveOn(_ sender: Any) {
-        number += "5"
-        numberLength += 1
-        display.text = number
-        if numberLength > 2{
-            disableNumberButtons()
-        }
+        addNumber(n : "5")
     }
     
     @IBAction func buttonSixOn(_ sender: Any) {
-        number += "6"
-        numberLength += 1
-        display.text = number
-        if numberLength > 2{
-            disableNumberButtons()
-        }
+        addNumber(n : "6")
     }
     
     @IBAction func buttonSevenOn(_ sender: Any) {
-        number += "7"
-        numberLength += 1
-        display.text = number
-        if numberLength > 2{
-            disableNumberButtons()
-        }
+        addNumber(n : "7")
     }
     
     @IBAction func buttonEightOn(_ sender: Any) {
-        number += "8"
+        addNumber(n : "8")
+    }
+    
+    @IBAction func buttonNineOn(_ sender: Any) {
+        addNumber(n : "9")
+    }
+    
+    func addNumber(n: String) {
+        number += n
         numberLength += 1
         display.text = number
         if numberLength > 2{
             disableNumberButtons()
         }
-    }
-    
-    @IBAction func buttonNineOn(_ sender: Any) {
-       number += "9"
-       numberLength += 1
-       display.text = number
-       if numberLength > 2{
-           disableNumberButtons()
-       }
     }
     
     @IBAction func enterButtonToggle(_ sender: Any) {
@@ -203,26 +169,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func additionButtonToggle(_ sender: Any) {
-        enter()
-        stack.append("+")
-        displayEverything()
+        addOperator(o: "+")
     }
     
     @IBAction func subtractButtonToggle(_ sender: Any) {
-        enter()
-        stack.append("-")
-        displayEverything()
+        addOperator(o: "-")
     }
     
     @IBAction func multipleButtonToggle(_ sender: Any) {
-        enter()
-        stack.append("*")
-        displayEverything()
+        addOperator(o: "*")
     }
     
     @IBAction func divideButtonToggle(_ sender: Any) {
+        addOperator(o: "/")
+    }
+    
+    func addOperator(o: String) {
         enter()
-        stack.append("/")
+        stack.append(o)
         displayEverything()
     }
     
