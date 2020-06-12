@@ -86,4 +86,17 @@ class RPN_CalculatorUITests: XCTestCase {
         let actual = app.staticTexts["display"].label
         XCTAssertEqual(actual, expected)
     }
+    
+    func testWhenFlipButtonIsPressedNumberTurnsNegativeOrPositive() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["5"].tap()
+        app.buttons["+/-"].tap()
+        
+        let expected = "-5"
+        let actual = app.staticTexts["display"].label
+        XCTAssertEqual(actual, expected)
+        
+    }
 }
