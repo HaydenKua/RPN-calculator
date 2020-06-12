@@ -28,6 +28,14 @@ class Calculator{
     
     func calculateAll() -> String{
         var resultStack = [Int]()
+        if stack.count < 3 {
+            return "Invalid Expression!"
+        }
+        for j in 0...1 {
+            if stack[j] == "+" || stack[j] == "-" || stack[j] == "*" || stack[j] == "/" || stack[j] == nil{
+                return "Invalid Expression! You must at least have two numbers followed by an operator."
+            }
+        }
         for i in 0...(stack.count-1) {
             if stack[i] == "+" {
                 let number1 = Int(resultStack.remove(at: resultStack.count-1))

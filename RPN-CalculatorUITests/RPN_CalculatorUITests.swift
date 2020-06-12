@@ -40,4 +40,18 @@ class RPN_CalculatorUITests: XCTestCase {
             }
         }
     }
+    
+    func testWhenButtonIsClickedTheNumberIsDisplayed() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["1"].tap()
+        app.buttons["3"].tap()
+        app.buttons["5"].tap()
+        
+        let expected = "135"
+        let actual = app.staticTexts["display"].label
+        XCTAssertEqual(actual, expected)
+    }
+    
 }

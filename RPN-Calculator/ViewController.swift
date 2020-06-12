@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var numberLength = 0
     
 
+    @IBOutlet var infoButton: UIButton!
     @IBOutlet var display: UILabel!
     @IBOutlet var buttonZero: UIButton!
     @IBOutlet var buttonOne: UIButton!
@@ -35,6 +36,15 @@ class ViewController: UIViewController {
     @IBOutlet var subtractButton: UIButton!
     @IBOutlet var multiplyButton: UIButton!
     @IBOutlet var divideButton: UIButton!
+    
+    
+    
+    @IBAction func infoButtonPressed(_ sender: Any) {
+        let alertController = UIAlertController(title: "Help", message: "This is a Reverse Polish Notation calculator. \n Reverse Polish Notation is where arithmetic expressions are wtitten such that the operator comes after the operands. \n E.g: 35*44*- would perform the calculation: (3*5)-(4*4). \n To key in a new number, press enter, and to calculate the expression, press eval.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     
     override func viewDidLoad() {
@@ -224,11 +234,8 @@ class ViewController: UIViewController {
         }
     }
     
-    
     func displayEverything() {
         let calculate = Calculator(stack: stack)
         display.text = calculate.displayAll()
     }
 }
-
-
